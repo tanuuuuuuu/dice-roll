@@ -1,6 +1,6 @@
 const DiceRollSide = (props) => {
     const handleName = (event) => {
-        props.setSide(Number(event.target.value))
+        props.setSide(Number(event.target.value) > 2 ? Number(event.target.value) : 2)
     }
     return (
         <div>

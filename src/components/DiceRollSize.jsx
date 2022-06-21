@@ -1,6 +1,6 @@
 const DiceRollSize = (props) => {
     const handleName = (event) => {
-        props.setSize(Number(event.target.value))
+        props.setSize(Number(event.target.value) > 1 ? Number(event.target.value) : 1)
     }
     return (
         <div>
