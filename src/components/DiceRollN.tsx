@@ -1,5 +1,10 @@
-const DiceRollN = (props) => {
-    const handleName = (event) => {
+type Props = {
+    n: number
+    setN: React.Dispatch<React.SetStateAction<number>>
+}
+
+const DiceRollN: React.FC<Props> = (props) => {
+    const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
         props.setN(Number(event.target.value) > 1 ? Number(event.target.value) : 1)
     }
     return (
@@ -11,4 +16,5 @@ const DiceRollN = (props) => {
         </div>
     )
 }
+
 export default DiceRollN

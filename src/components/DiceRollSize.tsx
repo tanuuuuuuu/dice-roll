@@ -1,5 +1,10 @@
-const DiceRollSize = (props) => {
-    const handleName = (event) => {
+type Props = {
+    size: number
+    setSize: React.Dispatch<React.SetStateAction<number>>
+}
+
+const DiceRollSize: React.FC<Props> = (props) => {
+    const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
         props.setSize(Number(event.target.value) > 1 ? Number(event.target.value) : 1)
     }
     return (
@@ -11,4 +16,5 @@ const DiceRollSize = (props) => {
         </div>
     )
 }
+
 export default DiceRollSize

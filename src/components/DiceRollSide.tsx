@@ -1,5 +1,10 @@
-const DiceRollSide = (props) => {
-    const handleName = (event) => {
+type Props = {
+    side: number
+    setSide: React.Dispatch<React.SetStateAction<number>>
+}
+
+const DiceRollSide: React.FC<Props> = (props) => {
+    const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
         props.setSide(Number(event.target.value) > 2 ? Number(event.target.value) : 2)
     }
     return (
@@ -11,4 +16,5 @@ const DiceRollSide = (props) => {
         </div>
     )
 }
+
 export default DiceRollSide
